@@ -2,6 +2,29 @@ import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Portfolio from "@/components/Portfolio";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCHOBRNmBd_tRHf6acgf82t3gAX85ccXQE",
+  authDomain: "dan-shrout-portfolio.firebaseapp.com",
+  databaseURL: "https://dan-shrout-portfolio.firebaseio.com",
+  projectId: "dan-shrout-portfolio",
+  storageBucket: "dan-shrout-portfolio.appspot.com",
+  messagingSenderId: "594370423558",
+  appId: "1:594370423558:web:75950982e3e35d84890c87",
+  measurementId: "G-67G7Y7N6RC",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 export default function Index() {
   return (
     <ScrollView style={styles.container}>
