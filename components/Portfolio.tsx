@@ -30,7 +30,45 @@ function PortfolioItem({
   return (
     <View style={styles.portfolioItem}>
       <Text style={styles.portfolioTitle}>{title}</Text>
-      <Image style={styles.imgAppStore} source={sourceAppImage} />
+
+      <View style={{ flexDirection: "row" }}>
+        <View
+          style={{
+            height: 140,
+            width: 140,
+            shadowColor: "#000000",
+            shadowOffset: {
+              width: 1,
+              height: 3,
+            },
+            shadowRadius: 5,
+            shadowOpacity: 1.0,
+            elevation: 5,
+            borderRadius: 30,
+          }}
+        >
+          <Image style={styles.imgAppStore} source={sourceAppImage} />
+        </View>
+
+        <View
+          style={{
+            height: 140,
+            marginLeft: 40,
+            //backgroundColor: "green"
+          }}
+        >
+          <Image
+            style={styles.imgIcon}
+            resizeMode='contain'
+            source={require("../assets/images/react-native-icon.png")}
+          />
+          <Image
+            style={styles.imgIcon}
+            resizeMode='contain'
+            source={require("../assets/images/expo-icon.png")}
+          />
+        </View>
+      </View>
       <View>
         {isAppStillPublished ? (
           <View style={styles.downloadLinks}>
@@ -266,19 +304,31 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   portfolioContainer: {
-    backgroundColor: "#fff",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    backgroundColor: "#000",
     // minHeight: 40,
   },
   portfolioItem: {
     // height: 240,
-    backgroundColor: "grey",
-    borderColor: "#000",
-    borderWidth: 1,
+    width: 450,
+    backgroundColor: "#fff",
+    //borderColor: "#000",
+    //borderWidth: 1,
+    borderRadius: 10,
     padding: 20,
     margin: 20,
+    // shadowColor: "#fff",
+    // shadowOffset: {
+    //   width: 1,
+    //   height: 3,
+    // },
+    // shadowRadius: 5,
+    // shadowOpacity: 1.0,
+    // elevation: 5,
   },
   portfolioTitle: {
-    color: "#fff",
+    color: "#000",
     fontSize: 30,
   },
   imgAppStore: {
@@ -290,6 +340,11 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     borderRadius: 10,
+  },
+  imgIcon: {
+    height: 80,
+    width: 80,
+    // borderRadius: 10,
   },
   imgDownloadApp: {
     height: 140,
