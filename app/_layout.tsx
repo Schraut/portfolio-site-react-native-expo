@@ -11,7 +11,7 @@ export default function RootLayout() {
     >
       <Stack.Screen name='index' />
       <Stack.Screen name='about' />
-      <Stack.Screen name='portfolio' />
+      <Stack.Screen name='work' />
     </Stack>
   );
 }

@@ -245,65 +245,49 @@ export default function Portfolio() {
             isAppStillPublished={false}
           />
         </View>
-        <Text style={styles.title}>
-          Native Android and iOS Apps I've worked on
-        </Text>
-        <View style={styles.portfolioContainer}>
-          <PortfolioItem
-            title={"Career Surfer"}
-            sourceAppImage={{
-              uri: "https://play-lh.googleusercontent.com/0E3zvmXcFbq7tUHgFVay3zqcanTqUmuPBOabJf-4FBWHXPdBqhpjfopibmjk8LYIoQ=w480-h960-rw",
-            }}
-            openPressAppStoreLink={() =>
-              openLink(
-                "https://apps.apple.com/us/app/career-surfer/id605800554",
-              )
-            }
-            openPressGooglePlayLink={() =>
-              openLink(
-                "https://play.google.com/store/apps/details?id=com.cedrsystems.careersurfer&hl=en_US",
-              )
-            }
-          />
-          <PortfolioItem
-            title={"Self Screening"}
-            sourceAppImage={require("../assets/images/self-screening.png")}
-            openPressAppStoreLink={() =>
-              openLink(
-                "https://apps.apple.com/us/app/schools-self-screening/id1540141318",
-              )
-            }
-            openPressGooglePlayLink={() =>
-              openLink(
-                "https://play.google.com/store/apps/details?id=org.codestack.selfscreening&hl=en_US",
-              )
-            }
-          />
-          {/* <PortfolioItem
-          title={"EDJOIN Interview"}
-          sourceAppImage={require("../assets/images/interview.png")}
+        {/* <Text style={styles.title}>
+        Native Android and iOS Apps I've worked on
+      </Text>
+      <View style={styles.portfolioContainer}>
+        <PortfolioItem
+          title={"Career Surfer"}
+          sourceAppImage={{
+            uri: "https://play-lh.googleusercontent.com/0E3zvmXcFbq7tUHgFVay3zqcanTqUmuPBOabJf-4FBWHXPdBqhpjfopibmjk8LYIoQ=w480-h960-rw",
+          }}
+          openPressAppStoreLink={() =>
+            openLink("https://apps.apple.com/us/app/career-surfer/id605800554")
+          }
+          openPressGooglePlayLink={() =>
+            openLink(
+              "https://play.google.com/store/apps/details?id=com.cedrsystems.careersurfer&hl=en_US",
+            )
+          }
+        />
+        <PortfolioItem
+          title={"Self Screening"}
+          sourceAppImage={require("../assets/images/self-screening.png")}
           openPressAppStoreLink={() =>
             openLink(
-              "https://apps.apple.com/us/app/edjoin-interview/id434730011",
+              "https://apps.apple.com/us/app/schools-self-screening/id1540141318",
             )
           }
           openPressGooglePlayLink={() =>
             openLink(
-              "https://play.google.com/store/apps/details?id=com.cedrsystems.edjoin&hl=en_US",
+              "https://play.google.com/store/apps/details?id=org.codestack.selfscreening&hl=en_US",
             )
           }
-        /> */}
-          <PortfolioItem
-            title={"My Stuff CAP"}
-            sourceAppImage={require("../assets/images/my-stuff-cap.png")}
-            isAppStillPublished={false}
-          />
-          <PortfolioItem
-            title={"My Stuff Job Central"}
-            sourceAppImage={require("../assets/images/my-stuff-job-central.png")}
-            isAppStillPublished={false}
-          />
-        </View>
+        />
+        <PortfolioItem
+          title={"My Stuff CAP"}
+          sourceAppImage={require("../assets/images/my-stuff-cap.png")}
+          isAppStillPublished={false}
+        />
+        <PortfolioItem
+          title={"My Stuff Job Central"}
+          sourceAppImage={require("../assets/images/my-stuff-job-central.png")}
+          isAppStillPublished={false}
+        />
+      </View> */}
       </View>
     </ScrollView>
   );

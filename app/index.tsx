@@ -1,6 +1,9 @@
 import {
   Dimensions,
   Image,
+  ImageSourcePropType,
+  Linking,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -33,37 +36,91 @@ const analytics = getAnalytics(app);
 let height = Dimensions.get("window").height;
 let width = Dimensions.get("window").width;
 
+interface MyLinkProps {
+  onPress: () => void;
+  image: any;
+}
+function MyLink({ onPress, image }: MyLinkProps) {
+  return <Pressable onPress={onPress}>{image}</Pressable>;
+}
+
 export default function Index() {
+  const openLink = (url: string) => {
+    Linking.openURL(url);
+  };
   return (
-    <ScrollView style={styles.scrollView}>
-      <View style={styles.container}>
-        <Text style={styles.text}>Dan Shrout</Text>
-        <Text style={styles.text}>Mobile Developer</Text>
-        <Image
-          style={styles.img}
-          resizeMode='contain'
-          source={require("../assets/images/pexels-pixabay-356056.jpg")}
-        />
+    <View style={styles.container}>
+      <View />
+      <View style={{ paddingLeft: 30 }}>
+        <Text style={styles.nameText}>Dan Shrout</Text>
+        <Text style={styles.titleText}>Mobile Developer</Text>
       </View>
-    </ScrollView>
+
+      <View style={styles.bottomView}>
+        <View style={styles.links}>
+          <MyLink
+            image={
+              <Image
+                style={styles.iconImg}
+                source={require("../assets/images/linkedin.png")}
+              />
+            }
+            onPress={() => openLink("https://www.linkedin.com/in/dan-shrout/")}
+          />
+          <MyLink
+            image={
+              <Image
+                style={styles.iconImg}
+                source={require("../assets/images/github.png")}
+              />
+            }
+            onPress={() => openLink("https://github.com/Schraut")}
+          />
+          {/* <MyLink
+            onPress={() => openLink("https://www.linkedin.com/in/dan-shrout/")}
+            source={require("../assets/images/linkedin.png")}
+          />
+          <MyLink
+            onPress={() => openLink("https://github.com/Schraut")}
+            source={require("../assets/images/github.png")}
+          /> */}
+        </View>
+        <View style={{ alignItems: "center" }}>
+          <Text style={{ color: "#fff" }}>
+            This website was built with React Native and Expo.
+          </Text>
+        </View>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    flex: 1,
-    backgroundColor: "#000",
-  },
   container: {
-    alignItems: "center",
+    flex: 1,
+    //alignItems: "center",
+    justifyContent: "space-between",
     backgroundColor: "#000",
   },
-  text: {
+  nameText: {
     color: "#fff",
-    fontSize: 30,
+    fontSize: 40,
   },
-  img: {
-    height: height,
-    width: width,
+  titleText: {
+    color: "#fff",
+    fontSize: 25,
+  },
+  iconImg: {
+    height: 60,
+    width: 60,
+    // backgroundColor: "blue",
+  },
+  links: {
+    alignItems: "center",
+    flexDirection: "row",
+    // backgroundColor: "yellow",
+  },
+  bottomView: {
+    paddingBottom: 30,
   },
 });

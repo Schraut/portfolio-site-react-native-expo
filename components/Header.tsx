@@ -11,8 +11,8 @@ export default function Header() {
         <Link href='/about' style={styles.button}>
           About
         </Link>
-        <Link href='/portfolio' style={styles.button}>
-          Projects
+        <Link href='/work' style={styles.button}>
+          Work
         </Link>
       </View>
     </View>
