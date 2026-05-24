@@ -8,93 +8,95 @@ import {
   View,
 } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import React from "react";
+import PortfolioItem from "@/components/work-screen/PortfolioItem";
 
-interface PortfolioItemProps {
-  //sourceiOS: any;
-  // sourceAndroid: any;
-  isAppStillPublished?: boolean;
-  sourceAppImage: any;
-  title: string;
-  openPressAppStoreLink?: () => void;
-  openPressGooglePlayLink?: () => void;
-}
+// interface PortfolioItemProps {
+//   //sourceiOS: any;
+//   // sourceAndroid: any;
+//   isAppStillPublished?: boolean;
+//   sourceAppImage: any;
+//   title: string;
+//   openPressAppStoreLink?: () => void;
+//   openPressGooglePlayLink?: () => void;
+// }
 
-function PortfolioItem({
-  //sourceiOS,
-  isAppStillPublished = true,
-  sourceAppImage,
-  title,
-  openPressAppStoreLink,
-  openPressGooglePlayLink,
-}: PortfolioItemProps) {
-  return (
-    <View style={styles.portfolioItem}>
-      <Text style={styles.portfolioTitle}>{title}</Text>
+// function PortfolioItem({
+//   //sourceiOS,
+//   isAppStillPublished = true,
+//   sourceAppImage,
+//   title,
+//   openPressAppStoreLink,
+//   openPressGooglePlayLink,
+// }: PortfolioItemProps) {
+//   return (
+//     <View style={styles.portfolioItem}>
+//       <Text style={styles.portfolioTitle}>{title}</Text>
 
-      <View style={{ flexDirection: "row" }}>
-        <View
-          style={{
-            height: 140,
-            width: 140,
-            shadowColor: "#000000",
-            shadowOffset: {
-              width: 1,
-              height: 3,
-            },
-            shadowRadius: 5,
-            shadowOpacity: 1.0,
-            elevation: 5,
-            borderRadius: 30,
-          }}
-        >
-          <Image style={styles.imgAppStore} source={sourceAppImage} />
-        </View>
+//       <View style={{ flexDirection: "row" }}>
+//         <View
+//           style={{
+//             height: 140,
+//             width: 140,
+//             shadowColor: "#000000",
+//             shadowOffset: {
+//               width: 1,
+//               height: 3,
+//             },
+//             shadowRadius: 5,
+//             shadowOpacity: 1.0,
+//             elevation: 5,
+//             borderRadius: 30,
+//           }}
+//         >
+//           <Image style={styles.imgAppStore} source={sourceAppImage} />
+//         </View>
 
-        <View
-          style={{
-            height: 140,
-            marginLeft: 40,
-            //backgroundColor: "green"
-          }}
-        >
-          <Image
-            style={styles.imgIcon}
-            resizeMode='contain'
-            source={require("../assets/images/react-native-icon.png")}
-          />
-          <Image
-            style={styles.imgIcon}
-            resizeMode='contain'
-            source={require("../assets/images/expo-icon.png")}
-          />
-        </View>
-      </View>
-      <View>
-        {isAppStillPublished ? (
-          <View style={styles.downloadLinks}>
-            <Pressable onPress={openPressAppStoreLink}>
-              <Image
-                style={styles.imgDownloadApp}
-                source={require("../assets/images/app-store-badge/512x512.png")}
-              />
-            </Pressable>
+//         <View
+//           style={{
+//             height: 140,
+//             marginLeft: 40,
+//             //backgroundColor: "green"
+//           }}
+//         >
+//           <Image
+//             style={styles.imgIcon}
+//             resizeMode='contain'
+//             source={require("../assets/images/react-native-icon.png")}
+//           />
+//           <Image
+//             style={styles.imgIcon}
+//             resizeMode='contain'
+//             source={require("../assets/images/expo-icon.png")}
+//           />
+//         </View>
+//       </View>
+//       <View>
+//         {isAppStillPublished ? (
+//           <View style={styles.downloadLinks}>
+//             <Pressable onPress={openPressAppStoreLink}>
+//               <Image
+//                 style={styles.imgDownloadApp}
+//                 source={require("../assets/images/app-store-badge/512x512.png")}
+//               />
+//             </Pressable>
 
-            <Pressable onPress={openPressGooglePlayLink}>
-              <Image
-                style={styles.imgDownloadApp}
-                source={require("../assets/images/google-play-badge/512x512.png")}
-              />
-            </Pressable>
-          </View>
-        ) : (
-          <Text style={styles.portfolioTitle}>
-            This app is no longer being used.
-          </Text>
-        )}
-      </View>
-    </View>
-  );
-}
+//             <Pressable onPress={openPressGooglePlayLink}>
+//               <Image
+//                 style={styles.imgDownloadApp}
+//                 source={require("../assets/images/google-play-badge/512x512.png")}
+//               />
+//             </Pressable>
+//           </View>
+//         ) : (
+//           <Text style={styles.portfolioTitle}>
+//             This app is no longer being used.
+//           </Text>
+//         )}
+//       </View>
+//     </View>
+//   );
+// }
 
 export default function Portfolio() {
   const openLink = (storeLink: string) => {
@@ -105,7 +107,7 @@ export default function Portfolio() {
     <ScrollView style={styles.container}>
       <View style={{ alignItems: "center" }}>
         <Text style={styles.title}>
-          Apps I've built using React Native & Expo
+          Production apps I've built using React Native & Expo
         </Text>
         <View style={styles.portfolioContainer}>
           <PortfolioItem
@@ -230,7 +232,7 @@ export default function Portfolio() {
             }
             openPressGooglePlayLink={() =>
               openLink(
-                "https://play.google.com/store/apps/details?id=com.cedr.csclive2023&hl=en_US",
+                "https://play.google.com/store/apps/details?id=com.cedr.csclive2022&hl=en_US",
               )
             }
           />
@@ -245,49 +247,49 @@ export default function Portfolio() {
             isAppStillPublished={false}
           />
         </View>
-        {/* <Text style={styles.title}>
-        Native Android and iOS Apps I've worked on
-      </Text>
-      <View style={styles.portfolioContainer}>
-        <PortfolioItem
-          title={"Career Surfer"}
-          sourceAppImage={{
-            uri: "https://play-lh.googleusercontent.com/0E3zvmXcFbq7tUHgFVay3zqcanTqUmuPBOabJf-4FBWHXPdBqhpjfopibmjk8LYIoQ=w480-h960-rw",
-          }}
-          openPressAppStoreLink={() =>
-            openLink("https://apps.apple.com/us/app/career-surfer/id605800554")
-          }
-          openPressGooglePlayLink={() =>
-            openLink(
-              "https://play.google.com/store/apps/details?id=com.cedrsystems.careersurfer&hl=en_US",
-            )
-          }
-        />
-        <PortfolioItem
-          title={"Self Screening"}
-          sourceAppImage={require("../assets/images/self-screening.png")}
-          openPressAppStoreLink={() =>
-            openLink(
-              "https://apps.apple.com/us/app/schools-self-screening/id1540141318",
-            )
-          }
-          openPressGooglePlayLink={() =>
-            openLink(
-              "https://play.google.com/store/apps/details?id=org.codestack.selfscreening&hl=en_US",
-            )
-          }
-        />
-        <PortfolioItem
-          title={"My Stuff CAP"}
-          sourceAppImage={require("../assets/images/my-stuff-cap.png")}
-          isAppStillPublished={false}
-        />
-        <PortfolioItem
-          title={"My Stuff Job Central"}
-          sourceAppImage={require("../assets/images/my-stuff-job-central.png")}
-          isAppStillPublished={false}
-        />
-      </View> */}
+        <Text style={styles.title}>
+          Native Android and iOS Apps I've contributed to in production
+        </Text>
+        <View style={styles.portfolioContainer}>
+          <PortfolioItem
+            title={"Career Surfer"}
+            sourceAppImage={require("../assets/images/career-surfer-icon.png")}
+            openPressAppStoreLink={() =>
+              openLink(
+                "https://apps.apple.com/us/app/career-surfer/id605800554",
+              )
+            }
+            openPressGooglePlayLink={() =>
+              openLink(
+                "https://play.google.com/store/apps/details?id=com.cedrsystems.careersurfer&hl=en_US",
+              )
+            }
+          />
+          <PortfolioItem
+            title={"Self Screening"}
+            sourceAppImage={require("../assets/images/self-screening.png")}
+            openPressAppStoreLink={() =>
+              openLink(
+                "https://apps.apple.com/us/app/schools-self-screening/id1540141318",
+              )
+            }
+            openPressGooglePlayLink={() =>
+              openLink(
+                "https://play.google.com/store/apps/details?id=org.codestack.selfscreening&hl=en_US",
+              )
+            }
+          />
+          <PortfolioItem
+            title={"My Stuff CAP"}
+            sourceAppImage={require("../assets/images/my-stuff-cap.png")}
+            isAppStillPublished={false}
+          />
+          <PortfolioItem
+            title={"My Stuff Job Central"}
+            sourceAppImage={require("../assets/images/my-stuff-job-central.png")}
+            isAppStillPublished={false}
+          />
+        </View>
       </View>
     </ScrollView>
   );
@@ -307,7 +309,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     backgroundColor: "#000",
-    alignItems: "center",
+    justifyContent: "center",
     // minHeight: 40,
   },
   portfolioItem: {
